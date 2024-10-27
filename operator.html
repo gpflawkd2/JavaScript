@@ -32,6 +32,25 @@
             
             alert(0 === -0);    //true
             alert(NaN === NaN); //false
+
+            /*
+            논리연산자
+            && : And, 모든 조건이 true인 경우 true
+            || : Or, 하나의 조건이라도 true인 경우 true
+
+            숫자 1은 true로 간주됨
+            */
+
+            //prompt : 입력창 Show ex)prompt('아이디를 입력해주세요.');
+
+            id = prompt('아이디를 입력해주세요.');
+            password = prompt('비밀번호를 입력해주세요.');
+
+            if((id==='test1' || id==='test2' || id==='test3') && password==='111111'){
+                alert('인증 했습니다.');
+            } else {
+                alert('인증에 실패 했습니다.');
+            }
         </script>
     </body>
 </html>
