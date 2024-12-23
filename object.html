@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+
+            /*
+            객체(object)
+            - 값을 담는 그릇
+            - 배열 index의 문자화
+            - key : value 의 형태로 객체 생성
+            */
+
+            // case 1
+            var grades = {'a':50, 'b':60, 'c':75};
+
+            // case 2
+            var grades = {}; //빈 객체 생성
+
+            grades['a'] = 50;
+            grades['b'] = 60;
+            grades['c'] = 75;
+
+            //case 3
+            var grades = new Object();
+
+            grades['apple'] = 50;
+            grades['melon'] = 60;
+            grades['orange'] = 75;
+
+            grades['mel'+'on']; //대괄호 안 변수 처리 가능
+            grades.melon; //.key로 접근 가능
+            //grades.'mel'+'on'; syntax error //.으로 접근시 key를 나누어 처리하는 것이 불가함
+
+        </script>
+
+        <ul>
+            <script>
+
+                /*
+                for(~in Object) 문
+                - 배열 및 객체에서 모두 사용 가능
+                */
+
+                //example 1
+                var grades = {'egoing': 50, 'k8805': 60, 'sorialgi': 75};
+
+                /*
+                for(key in grades) {
+                    document.write("key : "+ key +" value : "+grades[key]+"<br />");
+                }
+
+                for(var name in grades) {
+                    document.write("key : "+ name +" value : "+grades[name]+"<br />");
+                }
+                */
+
+                for(var name in grades) {
+                    document.write("<li>key : "+ name +" value : "+grades[name]+"</li>");
+                }
+
+            </script>
+        </ul>
+        <script>
+            /*
+            this : 함수가 소속되어 있는 객체를 가리킴
+            */
+            var grades = {
+                'list': {'egoing': 10, 'k8805': 8, 'sorialgi': 80},
+                'show' : function(){
+                    //this : grades를 가리킴
+                    for(var name in this.list){
+                        console.log(name, this.list[name]);
+                        //출력 Data
+                        //egoing 10
+                        //k8805 8
+                        //sorialgi 80
+                        document.write(name + ':'+this.list[name]+"<br />");
+                    }
+                }
+            };
+
+            alert(grades['list']['egoing']);
+
+            grades['show']();
+
+            grades.show();
+        </script>
+    </body>
+</html>
